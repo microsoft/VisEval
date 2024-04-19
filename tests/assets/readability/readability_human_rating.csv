@@ -1,0 +1,101 @@
+﻿visualization_id,query,expert1,expert2,expert3,has_layout_issues,has_scale&ticks_issues
+2756@x_name@DESC,"Draw a bar chart showing the total number of every ship type by categorizing by nationality, and list x-axis in descending order.",1,1,2,TRUE,FALSE
+2815@x_name@DESC,"Compute the total number in each competition type, and then split by country. Plot a bar chart and show in desc by the x-axis.",1,1,1,TRUE,FALSE
+2841@y_name@ASC,"Bar graph to show the average of high temperature from different day of week, and could you show y axis in ascending order?",2,2,3,FALSE,TRUE
+312,Give me the proportion of end stations for the trips with the three oldest id using a pie chart.,4,4,4,TRUE,FALSE
+69,What is the number of booking start dates of the apartments with more than 2 bedrooms for each year? Return a bar chart.,1,2,1,TRUE,TRUE
+4,Show all the faculty ranks and the number of students advised by each rank with a pie chart.,4,5,5,FALSE,FALSE
+9,Show the number of faculty members for each rank in a bar chart.,4,3,1,TRUE,FALSE
+32,List the names of aircrafts and the number of times it won matches by a bar chart.,3,3,2,TRUE,TRUE
+286,What are the date and mean humidity for the top 3 days with the largest max wind speeds? Return me a bar chart.,2,3,1,TRUE,FALSE
+296,"For the top 3 days with the largest max wind speeds, please bin the date into the of the week and then compute the average of mean humidity to visualize a bar chart.",3,3,2,TRUE,FALSE
+33,"What are the descriptions for the aircrafts, and count them by a pie chart",4,4,5,FALSE,FALSE
+65,"Show the number of start dates of all the apartment bookings made by guests with gender code ""Female"" for each year in a bar chart.",1,2,1,FALSE,TRUE
+72,Find the number of booking start date for the apartments that have more than two bedrooms for each weekday in a bar chart.,4,3,4,FALSE,TRUE
+81,A pie chart for showing the number of the facility codes of apartments with more than 4 bedrooms.,4,5,5,FALSE,FALSE
+387,"A grouped scatter chart shows the correlation between Height and Weight , and group by attribute Sex.",5,5,4,FALSE,FALSE
+399,"Plot a scatter chart, to show the correlation between support and consider rates for each candidate.",5,4,3,FALSE,FALSE
+432,plot scatter on what is the maximum accelerate for different number of cylinders?,5,4,4,FALSE,FALSE
+267,Return a line chart about the change of monthly_rental over date_address_from .,4,5,5,FALSE,FALSE
+316,A line chart for giveing me the number of the dates when the max temperature was higher than 85.,4,3,4,FALSE,TRUE
+470,What is the sum of capacity of cinemas open for each year? Return a line chart.,4,4,5,FALSE,FALSE
+173,A pie chart showing the number of results of the battles when the bulgarian commander is not 'Boril'.,4,5,4,FALSE,FALSE
+219,"Show me about the distribution of other_details and the average of monthly_rental , and group by attribute other_details in a bar chart.",5,5,5,FALSE,FALSE
+246,Draw a bar chart about the distribution of date_address_from and the sum of monthly_rental bin date_address_from by year.,1,2,1,FALSE,TRUE
+338,Compute the total number of stations across city as a pie chart.,4,4,5,FALSE,FALSE
+342,"What are the dates in which the mean sea level pressure was between 30.3 and 31, and count them by a line chart",2,1,1,TRUE,TRUE
+368,A bar chart showing the number of accelerators for each browser.,4,3,2,TRUE,TRUE
+403,Count the number of people of each sex who have a weight higher than 85 by a bar chart.,4,4,3,FALSE,TRUE
+1008,Show the number of products with price higher than 1000 or lower than 500 for each product name in a pie chart.,5,5,5,FALSE,FALSE
+461,Give me a pie chart showing sum of price for each cinema.,4,4,3,FALSE,FALSE
+464,Show each location and the number of cinemas there by a bar chart.,4,3,4,TRUE,TRUE
+487,Show the number of climbers for each mountain in a pie chart.,4,3,4,TRUE,FALSE
+513,Find the total credits of all classes offered by each department. Visualize by bar chart.,5,5,5,FALSE,FALSE
+517,Find the number of students whose gpa is lower than the average gpa of all students for different first name in a pie chart.,4,4,5,FALSE,FALSE
+567,What is the gpa of the top 5 students with highest gpa? Show me a bar chart with each student by first name.,5,5,5,FALSE,FALSE
+611,Find the number of courses offered by Psychology department in each year with a line chart.,3,2,4,FALSE,TRUE
+616,"Find dept_name and the sum of salary , and group by attribute dept_name, and visualize them by a bar chart.",1,2,1,TRUE,FALSE
+622,Find the relationship between average and maximum capacity among rooms in each building with a scatter chart.,5,5,5,FALSE,FALSE
+659,"Find the last name of female (sex is F) students in the descending order of age, and count them by a bar chart",4,3,4,TRUE,TRUE
+676,What is the number of each course name that have at least five enrollments? Show me a bar chart.,2,3,3,TRUE,TRUE
+693,Show the number of singers in each country with a bar chart.,4,4,3,FALSE,TRUE
+708,Pie chart. how many counties correspond to each police force?,4,4,5,FALSE,FALSE
+718,Show the number of courses each teacher is arranged to teach in a pie chart.,4,5,5,FALSE,FALSE
+744,Show all template type codes and the number of documents using each type with a bar chart.,4,4,3,FALSE,FALSE
+789,Show all calendar dates and day Numbers in a line chart.,4,3,4,FALSE,TRUE
+803,Show budget type codes and the number of documents in each budget type with a bar chart.,5,5,4,FALSE,FALSE
+856,"Which workshop groups have bookings with status code ""stop""? Give me the names, and count them by a pie chart",4,4,5,FALSE,FALSE
+880,A line chart for what are the number of the actual delivery dates of orders with quantity 1?,4,3,4,FALSE,TRUE
+914,"Return a bar chart showing the proportion of the number of orders that have the status ""Delivered"" for each customer name.",3,2,3,TRUE,TRUE
+961,Show all product names and the total quantity ordered for each product name in a bar chart.,3,3,2,TRUE,FALSE
+1008,Show the number of products with price higher than 1000 or lower than 500 for each product name in a pie chart.,4,4,5,FALSE,FALSE
+1071,"List the venues of debates in ascending order of the number of audience, and count them by a bar chart",2,2,2,TRUE,FALSE
+1188,How many dogs who have gone through a treatment departed in each day? Return a bar chart.,5,5,5,FALSE,FALSE
+1285,"Which tests have ""Pass"" results? Return the dates when the tests were taken, and count them by a line chart",4,3,3,FALSE,TRUE
+1314,"For each county, find the name of the county and the number of delegates from that county. Show the proportion by pie chart.",5,4,5,FALSE,FALSE
+1363,Draw a bar chart for what is the number of employees from each city?,4,4,3,FALSE,TRUE
+1392,Please show the number of films for each type in a bar chart.,3,3,2,TRUE,FALSE
+1434,A pie chart for finding the number of the names of Japanese constructors that have once earned more than 5 points?,4,4,5,FALSE,FALSE
+1517,Show the number of companies in each headquarter with a pie chart.,3,4,3,FALSE,FALSE
+1530,A bar chart for listing the number of the names of patients who have made appointments.,4,4,3,FALSE,TRUE
+1630,Provide the frequency of the last names of employees earning more than the employee with id 163 using a bar chart.,4,3,3,FALSE,TRUE
+1961,"For all employees in the Finance department, show me the proportion of their job id using a pie chart.",5,4,5,FALSE,FALSE
+1974,Find the number of rooms with king bed for each decor type. Plot them as pie chart.,4,4,4,FALSE,FALSE
+1992,"Among all the claims, which claims have a claimed amount larger than the average? Please Bin the date it was settled into weekday interval and count them to show a bar chart.",4,3,3,FALSE,TRUE
+2013,What about the proportion of the total amounts of payments by each method code? You can give me a pie chart.,5,4,4,FALSE,FALSE
+2027,Sum the amount for all the payments processed with Visa by each year using a bar chart.,1,2,1,FALSE,TRUE
+2110,"Group and count the move in date in a bar chart, and I want to bin the X into Year interval.",1,2,1,FALSE,TRUE
+2174,Give me a bar chart to show the names and revenue of the company that earns the highest revenue in each headquarter city.,5,4,5,FALSE,FALSE
+2303,Please show me a bar chart for visualizing the name and revenue of all manufacturers sorted by their revenue in the descending order.,4,4,4,TRUE,FALSE
+2350,Group and count the color scheme for all the photos using a pie chart.,4,4,4,FALSE,FALSE
+2416,Find the name and membership level of the visitors whose membership level is higher than 4. Plot them as pie chart.,5,4,4,FALSE,FALSE
+2526,Show the proportion of all ministers using a pie chart.,5,4,5,FALSE,FALSE
+2571,Give me a pie to show total number of memory in g from different carrier.,4,4,4,FALSE,FALSE
+2615,"What are the payment date of the payment with amount paid higher than 300 or with payment type is 'Check', bin the payment date by month and count them by a bar chart",5,5,5,FALSE,FALSE
+2652,A bar chart for listing the number of the builders of railways in ascending alphabetical order.,4,3,3,TRUE,TRUE
+2724,"For each denomination, return the denomination and the count of schools with that denomination. Visualize by bar chart.",4,4,4,FALSE,TRUE
+2941,Give me a bar chart about the number of countries in the artist table,5,5,5,FALSE,FALSE
+3207,Show the name and age for all male people who don't have a wedding by a bar chart.,4,4,4,TRUE,FALSE
+1491@y_name@DESC,"Show the number of games for each home team in a bar chart, sort by the y-axis in desc please.",5,5,4,FALSE,FALSE
+1380@y_name@ASC,"Find each target user's name and average trust score Visualize by bar chart, rank y axis from low to high order.",5,5,4,FALSE,FALSE
+58@y_name@ASC,"What are the average ages for male and female students Plot them as bar chart, and list Y in asc order.",3,4,4,FALSE,FALSE
+847@y_name@DESC,"Show the number of documents created in each day and bin document date by weekday with a bar chart, list by the y axis in desc.",2,1,1,TRUE,TRUE
+2024@y_name@DESC,"For those payments processed with Visa, bin the payment day into Year interval and count them for a bar chart, order from high to low by the y axis.",2,2,1,FALSE,TRUE
+3014@y_name@ASC,"Find the data about the sale details and dates of transactions with amount smaller than 3000? Bin the date of the transaction into a weekday interval and compute the total number of each day with a bar chart, and display Y in ascending order.",4,4,3,FALSE,TRUE
+17@y_name@DESC,"Bar chart of total number by each rank, sort from high to low by the Y.",5,5,5,FALSE,FALSE
+2575@y_name@ASC,"For each phone, show its names and total number of stocks Visualize by bar chart, rank by the Y-axis in ascending please.",5,5,5,FALSE,FALSE
+75@y_name@ASC,"What is the number of booking start dates of the apartments with type code ""Duplex"" in each year? Return a bar chart, show y axis in ascending order.",1,1,1,FALSE,TRUE
+533@y_name@DESC,"What is the lowest student GPA for every department? Return a bar chart, display in desc by the Y.",4,5,5,FALSE,FALSE
+555@y_name@DESC,"How many classes are held in each department Visualize by bar chart, and list by the total number from high to low.",5,5,5,FALSE,FALSE
+1237@y_name@ASC,"Find the average age for students with different sex in a bar chart, could you list by the Y from low to high?",3,4,4,FALSE,FALSE
+279@y_name@DESC,"A bar chart about the number of end dates for incidents with incident type code ""NOISE"" and bin by month.",1,1,1,FALSE,TRUE
+3134@y_name@ASC,"Give me a bar chart for all_games_percent of each team name, could you list in asc by the y axis please?",5,5,5,FALSE,FALSE
+2943@y_name@ASC,"Bar chart x axis country y axis the average of age, and I want to show by the y-axis in asc please.",5,5,4,FALSE,FALSE
+2760@y_name@DESC,"Bar graph to show how many nationality from different nationality, list in desc by the total number.",5,5,5,FALSE,FALSE
+2765@y_name@ASC,"Give me a bar chart for mean tonnage of each type, show by the Y in asc.",5,5,5,FALSE,FALSE
+134@x_name@DESC,"List the number of enginners in a stacked bar chart The x-axis is last name and group by skill description, rank last_name in descending order.",2,2,2,TRUE,TRUE
+3069@x_name@ASC,"Find the name of each user and number of tweets tweeted by each of them Visualize by bar chart, could you order X-axis in asc order?",4,3,3,TRUE,TRUE
+145@y_name@DESC,"A stacked bar chart showing thfe number of faults for different fault short name and skills required to fix them The x-axis is skill description and group by fault short name, display by the y axis in descending.",3,4,4,TRUE,FALSE
+131,Give me a pie chart about the number of engineers for different skill description.,5,4,5,FALSE,FALSE
+2019,Bin the claim date into the Year interval and count them for visualizing a bar chart.,3,2,1,FALSE,TRUE
+1534,Return a pie on how many patients do each physician take care of? List their names and number of patients they take care of.,4,4,5,FALSE,FALSE
