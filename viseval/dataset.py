@@ -14,7 +14,7 @@ class Dataset:
         with open(folder / dict_name) as f:
             self.dict = json.load(f)
 
-        with open(folder / "db_tables.json") as f:
+        with open(folder / "databases/db_tables.json") as f:
             self.db_tables = json.load(f)
 
         def benchmark():
@@ -44,7 +44,7 @@ class Dataset:
 
         tables = list(
             map(
-                lambda table_name: f"{self.folder}/csv/{db_id}/{table_name}.csv",
+                lambda table_name: f"{self.folder}/databases/{db_id}/{table_name}.csv",
                 table_names,
             )
         )
