@@ -1,27 +1,27 @@
-from typing import Union
-from attr import dataclass
-import os
+import base64
 import json
 import logging
-import base64
+import os
+from typing import Union
+
 import cairosvg
 import pandas as pd
+from attr import dataclass
 
 from .check import (
-    deconstruct,
     chart_check,
     data_check,
-    order_check,
+    deconstruct,
     layout_check,
-    scale_and_ticks_check,
+    order_check,
     readability_check,
+    scale_and_ticks_check,
 )
 from .dataset import Dataset
 
 
 @dataclass
 class CheckResult:
-
     answer: Union[bool, int]
     aspect: str
     rationale: str
@@ -145,7 +145,6 @@ class EvaluationResult:
             score[metric] = records[metric].mean()
 
         for key in records.keys():
-            print(key)
             if (
                 key not in metrics
                 and key != "id"

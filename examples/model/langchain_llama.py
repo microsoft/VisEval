@@ -1,8 +1,7 @@
 import json
-from transformers import AutoTokenizer, LlamaForCausalLM
-import torch
 from typing import Any, List, Optional
 
+import torch
 from langchain.callbacks.manager import CallbackManagerForLLMRun
 from langchain.chat_models.base import SimpleChatModel
 from langchain.schema import (
@@ -12,6 +11,7 @@ from langchain.schema import (
     HumanMessage,
     SystemMessage,
 )
+from transformers import AutoTokenizer, LlamaForCausalLM
 
 B_ROUND, E_ROUND = "<s>", "</s>"
 B_INST, E_INST = "[INST]", "[/INST]"
@@ -22,7 +22,6 @@ UNSAFE_ERROR = "Error: special tags are not allowed as part of the prompt."
 
 
 class ChatLlama(SimpleChatModel):
-
     # read from config.json
     max_context_length: int = 2048
     max_new_tokens: int = 4096

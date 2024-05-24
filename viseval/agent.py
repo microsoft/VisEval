@@ -1,8 +1,9 @@
-from typing import Optional, Union, Tuple
-from llmx import TextGenerator
-from langchain.chat_models.base import BaseChatModel
-from attr import dataclass
 from abc import ABC, abstractmethod
+from typing import Optional, Tuple, Union
+
+from attr import dataclass
+from langchain.chat_models.base import BaseChatModel
+from llmx import TextGenerator
 
 
 @dataclass

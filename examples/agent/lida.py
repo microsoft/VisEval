@@ -1,16 +1,13 @@
 import time
-from llmx import TextGenerator
-from lida import Manager
-from lida.datamodel import Goal
-from lida.components import preprocess_code, get_globals_dict
-import re
-import ast
-import importlib
 
 import matplotlib.pyplot as plt
 import pandas as pd
+from lida import Manager
+from lida.components import get_globals_dict, preprocess_code
+from lida.datamodel import Goal
+from llmx import TextGenerator
 
-from .agent import Agent, ChartExecutionResult
+from viseval.agent import Agent, ChartExecutionResult
 from .utils import show_svg
 
 max_retries = 20

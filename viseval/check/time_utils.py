@@ -1,6 +1,6 @@
 from datetime import datetime
-from dateutil import parser
 
+from dateutil import parser
 
 TIME_MAP = {
     "mon": "monday",

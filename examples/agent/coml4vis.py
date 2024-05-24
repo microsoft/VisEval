@@ -1,14 +1,14 @@
 from __future__ import annotations
 
-import warnings
 import sys
-from langchain.chat_models.base import BaseChatModel
+import warnings
 
 import pandas as pd
 from coml import CoMLAgent, describe_variable
+from langchain.chat_models.base import BaseChatModel
 
+from viseval.agent import Agent, ChartExecutionResult
 from .utils import show_svg
-from .agent import Agent, ChartExecutionResult
 
 
 def read_table(name, url, format):

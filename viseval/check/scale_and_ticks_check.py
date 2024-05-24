@@ -1,10 +1,11 @@
 from __future__ import annotations
+
 import json
 import sys
 import warnings
+
 from langchain.chat_models.base import BaseChatModel
 from langchain.schema import HumanMessage, SystemMessage
-
 
 INSTRUCTION = """You will be provided with a visualization and its specifications. Consider the following aspect:
 

@@ -4,16 +4,16 @@ version = "0.0.1"
 requires-python = ">=3.10"
 dependencies = [
     "langchain",
-    "llmx",
     "python-dotenv",
     "numpy",
     "pandas",
     "matplotlib",
     "seaborn",
     "CairoSVG",
+    "selenium",
+    "llmx",
     "mlcopilot",
     "lida",
-    "selenium"
 ]
 readme = "README.md"
 

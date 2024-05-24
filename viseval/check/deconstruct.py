@@ -1,12 +1,13 @@
 # deconstruct svg to spec
+import html
 import math
 import re
-from xml.dom import minidom
-import html
 from collections import Counter
+from xml.dom import minidom
 
 import numpy as np
-from .time_utils import parse_time_to_timestamp, parse_timestamp_to_time, is_datetime
+
+from .time_utils import is_datetime, parse_time_to_timestamp, parse_timestamp_to_time
 
 keys_of_interest = [
     "id",
@@ -571,8 +572,7 @@ def extract_features(node, spec, parent, acc_trans, global_style):
     attrs = get_attribute_names(node)
     if spec["tag"] == "style":
         pass
-        # global_style = style_parser(node.textContent)
-    # todo: class or tag based style
+        # todo: class or tag based style
 
     # process path
     if spec["tag"] == "path":
@@ -1307,10 +1307,10 @@ def analysis_mark(nodes, spec):
                                 item1[encoding[channel]["field"] + "_origin"] = item1[
                                     encoding[channel]["field"]
                                 ]
-                                item1[encoding[channel]["field"]] = (
-                                    parse_timestamp_to_time(
-                                        item1[encoding[channel]["field"]]
-                                    )
+                                item1[
+                                    encoding[channel]["field"]
+                                ] = parse_timestamp_to_time(
+                                    item1[encoding[channel]["field"]]
                                 )
 
                     spec["data"].append(item1)

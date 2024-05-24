@@ -1,8 +1,8 @@
+from pathlib import Path
+
 import pytest
 
 from viseval.check import deconstruct
-
-from pathlib import Path
 
 folder = Path(__file__).resolve().parent
 

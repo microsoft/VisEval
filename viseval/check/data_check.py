@@ -2,11 +2,11 @@ import copy
 import json
 
 from .time_utils import (
-    parse_time_to_timestamp,
-    parse_number_to_time,
     compare_time_strings,
-    is_month_or_weekday,
     convert_month_or_weekday_to_int,
+    is_month_or_weekday,
+    parse_number_to_time,
+    parse_time_to_timestamp,
 )
 
 PRECISION = 0.0005

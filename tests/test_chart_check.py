@@ -1,9 +1,9 @@
-import pytest
 import json
-
-from viseval.check import deconstruct, chart_check
-
 from pathlib import Path
+
+import pytest
+
+from viseval.check import chart_check, deconstruct
 
 folder = Path(__file__).resolve().parent
 

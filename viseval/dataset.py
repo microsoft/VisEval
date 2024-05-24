@@ -4,12 +4,12 @@ from pathlib import Path
 
 class Dataset:
     def __init__(
-        self, folder: Path, type: str = "all", with_irrelevant_tables: bool = False
+        self, folder: Path, table_type: str = "all", with_irrelevant_tables: bool = False
     ):
         self.folder = folder
         dict_name = "visEval"
-        if type in ["single", "multiple"]:
-            dict_name += "_" + type
+        if table_type in ["single", "multiple"]:
+            dict_name += "_" + table_type
         dict_name += ".json"
         with open(folder / dict_name) as f:
             self.dict = json.load(f)

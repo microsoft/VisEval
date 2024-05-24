@@ -1,16 +1,17 @@
 import argparse
 from pathlib import Path
-import dotenv
 
-from viseval.agent import Chat2vis, Lida, CoML4VIS
+import dotenv
 from viseval import Dataset, Evaluator
+
+from agent import Chat2vis, CoML4VIS, Lida
 
 dotenv.load_dotenv()
 
 
 def configure_llm(model: str, agent: str):
     if agent == "lida":
-        if model in ["gpt-35-turbo", "gpt-4-32k"]:
+        if model in ["gpt-35-turbo", "gpt-4"]:
             from llmx import llm
 
             return llm(
@@ -31,7 +32,7 @@ def configure_llm(model: str, agent: str):
             return ChatGoogleGenerativeAI(
                 model=model, temperature=0.0, convert_system_message_to_human=True
             )
-        elif model in ["gpt-35-turbo", "gpt-4-32k"]:
+        elif model in ["gpt-35-turbo", "gpt-4"]:
             from langchain_openai import AzureChatOpenAI
 
             return AzureChatOpenAI(
@@ -41,7 +42,7 @@ def configure_llm(model: str, agent: str):
                 request_timeout=20,
             )
         elif model == "codellama-7b":
-            from langchain_llama import ChatLlama
+            from model.langchain_llama import ChatLlama
 
             return ChatLlama("../llama_models/CodeLlama-7b-Instruct")
         else:
@@ -72,7 +73,7 @@ def _main():
         "--model",
         type=str,
         default="gpt-35-turbo",
-        choices=["gpt-4-32k", "gpt-35-turbo", "gemini-pro", "codellama-7b"],
+        choices=["gpt-4", "gpt-35-turbo", "gemini-pro", "codellama-7b"],
     )
     parser.add_argument(
         "--agent",
@@ -89,12 +90,15 @@ def _main():
 
     args = parser.parse_args()
 
+    # config dataset
+    dataset = Dataset(args.benchmark, args.type, args.irrelevant_tables)
+    
+    # config agent
     agent = config_agent(
         args.agent,
         args.model,
         {"num_examples": args.num_examples, "library": args.library},
     )
-    dataset = Dataset(args.benchmark, args.type, args.irrelevant_tables)
 
     from langchain_openai import AzureChatOpenAI
 
@@ -105,9 +109,11 @@ def _main():
         request_timeout=20,
         max_tokens=4096,
     )
+    # config evaluator
     evaluator = Evaluator(webdriver_path=args.webdriver, vision_model=vision_model)
+    
+    # evaluate agent
     config = {"library": args.library, "logs": args.logs}
-
     result = evaluator.evaluate(agent, dataset, config)
     score = result.score()
     print(f"Score: {score}")

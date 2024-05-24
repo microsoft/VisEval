@@ -1,13 +1,14 @@
 from __future__ import annotations
 
-import pandas as pd
 import sys
 import warnings
+
+import pandas as pd
 from langchain.chat_models.base import BaseChatModel
 from langchain.schema import HumanMessage
 
+from viseval.agent import Agent, ChartExecutionResult
 from .utils import show_svg
-from .agent import Agent, ChartExecutionResult
 
 MAXIMUM_SAMPLES = 10
 

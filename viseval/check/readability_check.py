@@ -3,9 +3,9 @@ from __future__ import annotations
 import json
 import sys
 import warnings
+
 from langchain.chat_models.base import BaseChatModel
 from langchain.schema import HumanMessage, SystemMessage
-
 
 INSTRUCTION = """Your task is to evaluate the readability of the visualization on a scale of 1 to 5, where 1 indicates very difficult to read and 5 indicates very easy to read. You will be given a visualization requirement and the corresponding visualization created based on that requirement. Additionally, reviews from others regarding this visualization will be provided for your reference. Please think carefully and provide your reasoning and score.
 ```
