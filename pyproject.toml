@@ -1,5 +1,5 @@
 [project]
-name = "viseval"
+name = "vis-evaluator"
 version = "0.0.1"
 requires-python = ">=3.10"
 dependencies = [
@@ -12,15 +12,16 @@ dependencies = [
     "CairoSVG",
     "selenium",
     "llmx",
-    "mlcopilot",
-    "lida",
 ]
 readme = "README.md"
-
 
 [tool.setuptools.packages.find]
 include = ["viseval*"]
 
+[project.urls]
+Documentation = "https://github.com/microsoft/VisEval#readme"
+Issues = "https://github.com/microsoft/VisEval/issues"
+Source = "https://github.com/microsoft/VisEval"
 
 [project.optional-dependencies]
 dev = [
@@ -29,7 +30,9 @@ dev = [
     "pre-commit",
     "black",
     "isort",
-    "hatch"
+    "hatch",
+    "mlcopilot",
+    "lida",
 ]
 
 

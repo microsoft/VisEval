@@ -4,7 +4,10 @@ from pathlib import Path
 
 class Dataset:
     def __init__(
-        self, folder: Path, table_type: str = "all", with_irrelevant_tables: bool = False
+        self,
+        folder: Path,
+        table_type: str = "all",
+        with_irrelevant_tables: bool = False,
     ):
         self.folder = folder
         dict_name = "visEval"
