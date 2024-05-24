@@ -1,0 +1,1055 @@
+{
+    "4": {
+        "vis_query": {
+            "vis_part": "Visualize PIE",
+            "data_part": {
+                "sql_part": "SELECT Rank , count(*) FROM Faculty AS T1 JOIN Student AS T2 ON T1.FacID = T2.advisor GROUP BY T1.rank",
+                "binning": ""
+            },
+            "VQL": "Visualize PIE SELECT Rank , count(*) FROM Faculty AS T1 JOIN Student AS T2 ON T1.FacID = T2.advisor GROUP BY T1.rank"
+        },
+        "chart": "Pie",
+        "hardness": "Medium",
+        "db_id": "activity_1",
+        "vis_obj": {
+            "chart": "pie",
+            "x_name": "Rank",
+            "y_name": "count(*)",
+            "x_data": [
+                [
+                    "AssocProf",
+                    "AsstProf",
+                    "Professor"
+                ]
+            ],
+            "y_data": [
+                [
+                    2,
+                    18,
+                    14
+                ]
+            ],
+            "classify": [],
+            "describe": "",
+            "sort": null
+        },
+        "nl_queries": [
+            "Show all the faculty ranks and the number of students advised by each rank with a pie chart.",
+            "Return a pie on how many students are advised by each rank of faculty? List the rank and the number of students.",
+            "A pie chart about how many students are advised by each rank of faculty? List the rank and the number of students.",
+            "How many students are advised by each rank of faculty? List the rank and the number of students with a pie chart."
+        ],
+        "irrelevant_tables": [
+            "Faculty_Participates_in",
+            "Participates_in"
+        ],
+        "query_meta": [
+            {
+                "channel_specified": [
+                    "x",
+                    "y"
+                ]
+            },
+            {
+                "channel_specified": [
+                    "x",
+                    "y"
+                ]
+            },
+            {
+                "channel_specified": [
+                    "x",
+                    "y"
+                ]
+            },
+            {
+                "channel_specified": [
+                    "x",
+                    "y"
+                ]
+            }
+        ]
+    },
+    "400": {
+        "vis_query": {
+            "vis_part": "Visualize SCATTER",
+            "data_part": {
+                "sql_part": "SELECT Consider_rate , Oppose_rate FROM candidate",
+                "binning": ""
+            },
+            "VQL": "Visualize SCATTER SELECT Consider_rate , Oppose_rate FROM candidate"
+        },
+        "chart": "Scatter",
+        "hardness": "Easy",
+        "db_id": "candidate_poll",
+        "vis_obj": {
+            "chart": "scatter",
+            "x_name": "Consider_rate",
+            "y_name": "Oppose_rate",
+            "x_data": [
+                [
+                    0.3,
+                    0.2,
+                    0.27,
+                    0.34,
+                    0.3,
+                    0.42
+                ]
+            ],
+            "y_data": [
+                [
+                    0.43,
+                    0.45,
+                    0.43,
+                    0.44,
+                    0.32,
+                    0.32
+                ]
+            ],
+            "classify": [],
+            "describe": "",
+            "sort": null
+        },
+        "nl_queries": [
+            "A scatter showing the correlation between consider and oppose rates for each candidate.",
+            "Scatter plot to show consider rate on x axis and oppose_rate on y axis."
+        ],
+        "irrelevant_tables": [
+            "people"
+        ],
+        "query_meta": [
+            {
+                "channel_specified": []
+            },
+            {
+                "channel_specified": [
+                    "x",
+                    "y"
+                ]
+            }
+        ]
+    },
+    "1129": {
+        "vis_query": {
+            "vis_part": "Visualize BAR",
+            "data_part": {
+                "sql_part": "SELECT product_type_code , max(product_price) FROM products GROUP BY product_type_code",
+                "binning": ""
+            },
+            "VQL": "Visualize BAR SELECT product_type_code , max(product_price) FROM products GROUP BY product_type_code"
+        },
+        "chart": "Bar",
+        "hardness": "Easy",
+        "db_id": "department_store",
+        "vis_obj": {
+            "chart": "bar",
+            "x_name": "product_type_code",
+            "y_name": "max(product_price)",
+            "x_data": [
+                [
+                    "Clothes",
+                    "Hardware"
+                ]
+            ],
+            "y_data": [
+                [
+                    939.57,
+                    971.44
+                ]
+            ],
+            "classify": [],
+            "describe": "",
+            "sort": null
+        },
+        "nl_queries": [
+            "What is the highest price of product, grouped by product type? Show a bar chart.",
+            "Give the maximum product price for each product type in a bar chart.",
+            "Bar chart x axis product type code y axis maximal product price"
+        ],
+        "irrelevant_tables": [
+            "Staff_Department_Assignments",
+            "Customer_Addresses"
+        ],
+        "query_meta": [
+            {
+                "channel_specified": []
+            },
+            {
+                "channel_specified": []
+            },
+            {
+                "channel_specified": [
+                    "x",
+                    "y"
+                ]
+            }
+        ]
+    },
+    "2750": {
+        "vis_query": {
+            "vis_part": "Visualize BAR",
+            "data_part": {
+                "sql_part": "SELECT Class , COUNT(Class) FROM captain GROUP BY Rank ,  Class",
+                "binning": ""
+            },
+            "VQL": "Visualize BAR SELECT Class , COUNT(Class) FROM captain GROUP BY Rank ,  Class"
+        },
+        "chart": "Stacked Bar",
+        "hardness": "Hard",
+        "db_id": "ship_1",
+        "vis_obj": {
+            "chart": "bar",
+            "x_name": "Class",
+            "y_name": "COUNT(Class)",
+            "x_data": [
+                [
+                    "Armed schooner",
+                    "Cutter",
+                    "Frigate",
+                    "Sloop-of-war",
+                    "Third-rate ship of the line"
+                ]
+            ],
+            "y_data": [
+                [
+                    0,
+                    0,
+                    0,
+                    1,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    1,
+                    0,
+                    1
+                ],
+                [
+                    1,
+                    1,
+                    0,
+                    0,
+                    2
+                ]
+            ],
+            "classify": [
+                "Commander, junior captain",
+                "Lieutenant",
+                "Midshipman"
+            ],
+            "describe": "GROUP BY Rank, GROUP BY Class",
+            "sort": null
+        },
+        "nl_queries": [
+            "What is the total number of captains in each rank and class? Let class as X-axis, and categorize by rank with a stacked bar chart.",
+            "A stacked bar graph shows the total number of captains categorize by ranks of different classes."
+        ],
+        "irrelevant_tables": [
+            "Ship"
+        ],
+        "query_meta": [
+            {
+                "channel_specified": ["x","y","classify"],
+                "stacked_bar": true
+            },
+            {
+                "channel_specified": [],
+                "stacked_bar": true
+            }
+        ]
+    },
+    "2781": {
+        "vis_query": {
+            "vis_part": "Visualize LINE",
+            "data_part": {
+                "sql_part": "SELECT birthday , COUNT(birthday),preferred_foot,T2.player_api_id  FROM Player AS T1 JOIN Player_Attributes AS T2 ON T1.player_api_id = T2.player_api_id where overall_rating >=75 GROUP BY preferred_foot,T2.player_api_id",
+                "binning": "BIN birthday BY YEAR"
+            },
+            "VQL": "Visualize LINE SELECT birthday , COUNT(birthday) FROM Player AS T1 JOIN Player_Attributes AS T2 ON T1.player_api_id = T2.player_api_id GROUP BY player_name ORDER BY potential DESC LIMIT 5 BIN birthday BY YEAR"
+        },
+        "chart": "Grouping Line",
+        "hardness": "Extra Hard",
+        "db_id": "soccer_1",
+        "vis_obj": {
+            "chart": "line",
+            "x_name": "birthday",
+            "y_name": "COUNT(birthday)",
+            "x_data": [
+                [1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997]
+            ],
+            "y_data": [
+                [
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    7,
+                    7,
+                    16,
+                    15,
+                    19,
+                    28,
+                    35,
+                    53,
+                    58,
+                    50,
+                    58,
+                    59,
+                    57,
+                    63,
+                    53,
+                    51,
+                    50,
+                    37,
+                    35,
+                    32,
+                    24,
+                    21,
+                    10,
+                    4,
+                    1
+                ],
+                [
+                    1,
+                    1,
+                    1,
+                    5,
+                    6,
+                    11,
+                    22,
+                    30,
+                    49,
+                    65,
+                    79,
+                    87,
+                    141,
+                    136,
+                    162,
+                    127,
+                    152,
+                    159,
+                    150,
+                    191,
+                    171,
+                    162,
+                    158,
+                    123,
+                    97,
+                    91,
+                    62,
+                    49,
+                    20,
+                    8,
+                    4
+                ]
+            ],
+            "classify": [
+                "left",
+                "right"
+            ],
+            "describe": "GROUP BY player_name, BIN birthday BY YEAR",
+            "sort": null
+        },
+        "nl_queries": [
+            "Find players with a overall rating greater than or equal to 75 and use line chart to show the trend in the year of birth for players with different foot preferences."
+        ],
+        "irrelevant_tables": [
+            "sqlite_sequence",
+            "Team"
+        ],
+        "query_meta": [
+            {
+                "channel_specified": [
+                    "x",
+                    "y",
+                    "classify"
+                ]
+            }
+        ]
+    },
+    "3240": {
+        "vis_query": {
+            "vis_part": "Visualize LINE",
+            "data_part": {
+                "sql_part": "SELECT Year , avg(Price) FROM WINE GROUP BY YEAR",
+                "binning": ""
+            },
+            "VQL": "Visualize LINE SELECT Year , avg(Price) FROM WINE GROUP BY YEAR"
+        },
+        "chart": "Line",
+        "hardness": "Easy",
+        "db_id": "wine_1",
+        "vis_obj": {
+            "chart": "line",
+            "x_name": "Year",
+            "y_name": "avg(Price)",
+            "x_data": [
+                [
+                    "2004",
+                    "2005",
+                    "2006",
+                    "2007",
+                    "2008",
+                    "2009",
+                    "2066"
+                ]
+            ],
+            "y_data": [
+                [
+                    60.714285714285715,
+                    52.82142857142857,
+                    52.941176470588225,
+                    49.41847826086956,
+                    39.70769230769231,
+                    30.953846153846154,
+                    32
+                ]
+            ],
+            "classify": [],
+            "describe": "",
+            "sort": null
+        },
+        "nl_queries": [
+            "Plot year by mean price as a line chart"
+        ],
+        "irrelevant_tables": [
+            "grapes",
+            "appellations"
+        ],
+        "query_meta": [
+            {
+                "channel_specified": [
+                    "x",
+                    "y"
+                ]
+            }
+        ]
+    },
+    "773@x_name@DESC": {
+        "vis_query": {
+            "vis_part": "Visualize LINE",
+            "data_part": {
+                "sql_part": "SELECT Date_in_Locaton_To , COUNT(Date_in_Locaton_To) FROM Document_locations GROUP BY Date_in_Locaton_To ORDER BY Date_in_Locaton_To DESC",
+                "binning": ""
+            },
+            "VQL": "Visualize LINE SELECT Date_in_Locaton_To , COUNT(Date_in_Locaton_To) FROM Document_locations GROUP BY Date_in_Locaton_To ORDER BY Date_in_Locaton_To DESC"
+        },
+        "chart": "Line",
+        "hardness": "Medium",
+        "db_id": "cre_Doc_Tracking_DB",
+        "vis_obj": {
+            "chart": "line",
+            "x_name": "Date_in_Locaton_To",
+            "y_name": "COUNT(Date_in_Locaton_To)",
+            "x_data": [
+                [
+                    "2017-01-06",
+                    "2012-07-03",
+                    "2010-11-26",
+                    "2009-08-18",
+                    "2008-06-08",
+                    "1997-03-10",
+                    "1995-01-01",
+                    "1987-11-05",
+                    "1986-10-14",
+                    "1976-06-15"
+                ]
+            ],
+            "y_data": [
+                [
+                    1,
+                    1,
+                    3,
+                    1,
+                    1,
+                    1,
+                    1,
+                    2,
+                    2,
+                    2
+                ]
+            ],
+            "classify": [],
+            "describe": "GROUP BY Date_in_Locaton_To",
+            "sort": {
+                "channel": "x",
+                "order": "ascending"
+            }
+        },
+        "nl_queries": [
+            "Show the number of documents in different ending date and group by ending date with a line chart, and display in asc by the X.",
+            "How many documents in different ending date? Return a line chart grouping by ending date, and display in asc by the X."
+        ],
+        "irrelevant_tables": [
+            "Employees",
+            "Roles"
+        ],
+        "query_meta": [
+            {
+                "channel_specified": [
+                    "x",
+                    "y"
+                ],
+                "sort_by": "axis"
+            },
+            {
+                "channel_specified": [
+                    "x",
+                    "y"
+                ],
+                "sort_by": "axis"
+            }
+        ]
+    },
+    "68": {
+        "vis_query": {
+            "vis_part": "Visualize BAR",
+            "data_part": {
+                "sql_part": "SELECT booking_start_date , COUNT(booking_start_date) FROM Apartment_Bookings AS T1 JOIN Guests AS T2 ON T1.guest_id = T2.guest_id WHERE T2.gender_code = \"Female\"",
+                "binning": "BIN booking_start_date BY WEEKDAY"
+            },
+            "VQL": "Visualize BAR SELECT booking_start_date , COUNT(booking_start_date) FROM Apartment_Bookings AS T1 JOIN Guests AS T2 ON T1.guest_id = T2.guest_id WHERE T2.gender_code = \"Female\" BIN booking_start_date BY WEEKDAY"
+        },
+        "chart": "Bar",
+        "hardness": "Hard",
+        "db_id": "apartment_rentals",
+        "vis_obj": {
+            "chart": "bar",
+            "x_name": "booking_start_date",
+            "y_name": "COUNT(booking_start_date)",
+            "x_data": [
+                [
+                    "Mon",
+                    "Tue",
+                    "Wed",
+                    "Thur",
+                    "Fri",
+                    "Sat",
+                    "Sun"
+                ]
+            ],
+            "y_data": [
+                [
+                    2,
+                    2,
+                    1,
+                    1,
+                    1,
+                    2,
+                    0
+                ]
+            ],
+            "classify": [],
+            "describe": "BIN booking_start_date BY WEEKDAY",
+            "sort": null
+        },
+        "nl_queries": [
+            "Use a bar chart to show the number of start dates of all the apartment bookings made by guests with gender code \"Female\" for each weekday.",
+            "A bar chart showing the number of start date of the apartment bookings made by female guests (gender code \"Female\") for each weekday."
+        ],
+        "irrelevant_tables": [
+            "Apartments",
+            "Apartment_Buildings"
+        ],
+        "query_meta": [
+            {
+                "channel_specified": []
+            },
+            {
+                "channel_specified": []
+            }
+        ]
+    },
+    "1071": {
+        "vis_query": {
+            "vis_part": "Visualize BAR",
+            "data_part": {
+                "sql_part": "SELECT Venue , COUNT(Venue) FROM debate GROUP BY Venue ORDER BY Num_of_Audience ASC",
+                "binning": ""
+            },
+            "VQL": "Visualize BAR SELECT Venue , COUNT(Venue) FROM debate GROUP BY Venue ORDER BY Num_of_Audience ASC"
+        },
+        "chart": "Bar",
+        "hardness": "Medium",
+        "db_id": "debate",
+        "vis_obj": {
+            "chart": "bar",
+            "x_name": "Venue",
+            "y_name": "COUNT(Venue)",
+            "x_data": [
+                [
+                    "Abu Dhabi , UAE",
+                    "Doha , Qatar",
+                    "Dubai , UAE",
+                    "Manama , Bahrain"
+                ]
+            ],
+            "y_data": [
+                [
+                    1,
+                    1,
+                    1,
+                    3
+                ]
+            ],
+            "classify": [],
+            "describe": "GROUP BY Venue",
+            "sort": null
+        },
+        "nl_queries": [
+            "List the venues of debates in ascending order of the number of audience, and count them by a bar chart"
+        ],
+        "irrelevant_tables": [
+            "debate_people",
+            "people"
+        ],
+        "query_meta": [
+            {
+                "channel_specified": []
+            }
+        ]
+    },
+    "680@y_name@DESC": {
+        "vis_query": {
+            "vis_part": "Visualize BAR",
+            "data_part": {
+                "sql_part": "SELECT Headquarters , COUNT(Headquarters) FROM company GROUP BY Industry ,  Headquarters ORDER BY COUNT(Headquarters) DESC",
+                "binning": ""
+            },
+            "VQL": "Visualize BAR SELECT Headquarters , COUNT(Headquarters) FROM company GROUP BY Industry ,  Headquarters ORDER BY COUNT(Headquarters) DESC"
+        },
+        "chart": "Stacked Bar",
+        "hardness": "Hard",
+        "db_id": "company_employee",
+        "vis_obj": {
+            "chart": "bar",
+            "x_name": "Headquarters",
+            "y_name": "COUNT(Headquarters)",
+            "x_data": [
+                [
+                    "USA",
+                    "China",
+                    "UK",
+                    "Russia",
+                    "Netherlands",
+                    "Germany",
+                    "France",
+                    "Brazil"
+                ]
+            ],
+            "y_data": [
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0
+                ],
+                [
+                    3,
+                    3,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    2,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    2,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    1,
+                    1
+                ],
+                [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            ],
+            "classify": [
+                "Automotive",
+                "Banking",
+                "Conglomerate",
+                "Oil and gas",
+                "Retailing"
+            ],
+            "describe": "GROUP BY Industry, GROUP BY Headquarters",
+            "sort": {
+                "channel": "y",
+                "order": "descending"
+            }
+        },
+        "nl_queries": [
+            "Stack bar chart of the number of headquarters vs Industry based on headquarters, display Y-axis in desc order please.",
+            "How many companies are there in each headquarters? Return a stacked bar chart to group by industry and headquearters, and count by headquarters, and could you show in desc by the how many headquarters?"
+        ],
+        "irrelevant_tables": [
+            "employment",
+            "people"
+        ],
+        "query_meta": [
+            {
+                "channel_specified": [],
+                "sort_by": "axis",
+                "stacked_bar": true
+            },
+            {
+                "channel_specified": [],
+                "sort_by": "field",
+                "stacked_bar": true
+            }
+        ]
+    },
+    "2815@x_name@DESC": {
+        "vis_query": {
+            "vis_part": "Visualize BAR",
+            "data_part": {
+                "sql_part": "SELECT Country , COUNT(Country) FROM competition GROUP BY Competition_type ,  Country ORDER BY Country DESC",
+                "binning": ""
+            },
+            "VQL": "Visualize BAR SELECT Country , COUNT(Country) FROM competition GROUP BY Competition_type ,  Country ORDER BY Country DESC"
+        },
+        "chart": "Stacked Bar",
+        "hardness": "Hard",
+        "db_id": "sports_competition",
+        "vis_obj": {
+            "chart": "bar",
+            "x_name": "Country",
+            "y_name": "COUNT(Country)",
+            "x_data": [
+                [
+                    "Spain",
+                    "Slovenia",
+                    "Russia",
+                    "Italy",
+                    "Ireland",
+                    "Australia"
+                ]
+            ],
+            "y_data": [
+                [
+                    1,
+                    0,
+                    2,
+                    2,
+                    1,
+                    2
+                ],
+                [
+                    0,
+                    2,
+                    1,
+                    0,
+                    0,
+                    0
+                ]
+            ],
+            "classify": [
+                "Friendly",
+                "Tournament"
+            ],
+            "describe": "GROUP BY Competition_type, GROUP BY Country",
+            "sort": {
+                "channel": "x",
+                "order": "descending"
+            }
+        },
+        "nl_queries": [
+            "Compute the total number in each competition type, and then split by country. Plot a bar chart and show in desc by the x-axis."
+        ],
+        "irrelevant_tables": [
+            "competition_result",
+            "club_rank"
+        ],
+        "query_meta": [
+            {
+                "channel_specified": [],
+                "sort_by": "axis",
+                "stacked_bar": false
+            }
+        ]
+    },
+    "2060@y_name@DESC": {
+        "vis_query": {
+            "vis_part": "Visualize BAR",
+            "data_part": {
+                "sql_part": "SELECT Name , COUNT(Name) FROM journal_committee AS T1 JOIN editor AS T2 ON T1.Editor_ID = T2.Editor_ID JOIN journal AS T3 ON T1.Journal_ID = T3.Journal_ID WHERE T3.Sales > 3000 GROUP BY Name ORDER BY COUNT(Name) DESC",
+                "binning": ""
+            },
+            "VQL": "Visualize BAR SELECT Name , COUNT(Name) FROM journal_committee AS T1 JOIN editor AS T2 ON T1.Editor_ID = T2.Editor_ID JOIN journal AS T3 ON T1.Journal_ID = T3.Journal_ID WHERE T3.Sales > 3000 GROUP BY Name ORDER BY COUNT(Name) DESC"
+        },
+        "chart": "Bar",
+        "hardness": "Extra Hard",
+        "db_id": "journal_committee",
+        "vis_obj": {
+            "chart": "bar",
+            "x_name": "Name",
+            "y_name": "COUNT(Name)",
+            "x_data": [
+                [
+                    "Gra\u017cyna Wolszczak",
+                    "W\u0142adys\u0142aw Grzywna",
+                    "Maria G\u00f3ralczyk",
+                    "Kamila Porczyk"
+                ]
+            ],
+            "y_data": [
+                [
+                    2,
+                    1,
+                    1,
+                    1
+                ]
+            ],
+            "classify": [],
+            "describe": "GROUP BY Name",
+            "sort": {
+                "channel": "y",
+                "order": "descending"
+            }
+        },
+        "nl_queries": [
+            "Show the names of editors that are on the committee of journals with sales bigger than 3000, and count them by a bar chart, and I want to list by the Y in desc.",
+            "A bar chart for showing the number of the names of editors that are on the committee of journals with sales bigger than 3000, and could you rank by the y axis in descending?"
+        ],
+        "irrelevant_tables": [],
+        "query_meta": [
+            {
+                "channel_specified": [],
+                "sort_by": "axis"
+            },
+            {
+                "channel_specified": [
+                    
+                ],
+                "sort_by": "axis"
+            }
+        ]
+    },
+    "1000@y_name@DESC": {
+        "vis_query": {
+            "vis_part": "Visualize BAR",
+            "data_part": {
+                "sql_part": "SELECT product_name , COUNT(product_name) FROM products GROUP BY product_name ORDER BY COUNT(product_name) DESC",
+                "binning": ""
+            },
+            "VQL": "Visualize BAR SELECT product_name , COUNT(product_name) FROM products GROUP BY product_name ORDER BY COUNT(product_name) DESC"
+        },
+        "chart": "Bar",
+        "hardness": "Medium",
+        "db_id": "customers_and_products_contacts",
+        "vis_obj": {
+            "chart": "bar",
+            "x_name": "product_name",
+            "y_name": "COUNT(product_name)",
+            "x_data": [
+                [
+                    "Apple",
+                    "jcrew",
+                    "gucci",
+                    "Sony"
+                ]
+            ],
+            "y_data": [
+                [
+                    5,
+                    4,
+                    3,
+                    3
+                ]
+            ],
+            "classify": [],
+            "describe": "GROUP BY product_name",
+            "sort": {
+                "channel": "y",
+                "order": "descending"
+            }
+        },
+        "nl_queries": [
+            "Compare the frequency of product names using a bar chart, rank by the Y-axis in desc.",
+            "Bar chart x axis product name y axis how many product name, rank by the Y-axis in desc.",
+            "Show me a bar chart with the product name and their frequency, and show by the y axis in desc please."
+        ],
+        "irrelevant_tables": [
+            "Order_Items",
+            "Customer_Address_History"
+        ],
+        "query_meta": [
+            {
+                "channel_specified": [],
+                "sort_by": "axis"
+            },
+            {
+                "channel_specified": [
+                    "x",
+                    "y"
+                ],
+                "sort_by": "axis"
+            },
+            {
+                "channel_specified": [
+                    
+                ],
+                "sort_by": "axis"
+            }
+        ]
+    },
+    
+    "550@y_name@DESC": {
+        "vis_query": {
+            "vis_part": "Visualize BAR",
+            "data_part": {
+                "sql_part": "SELECT EMP_HIREDATE , COUNT(EMP_HIREDATE) FROM employee AS T1 JOIN professor AS T2 ON T1.emp_num = T2.emp_num WHERE T2.prof_office = 'DRE 102'  ORDER BY COUNT(EMP_HIREDATE) DESC",
+                "binning": "BIN EMP_HIREDATE BY MONTH"
+            },
+            "VQL": "Visualize BAR SELECT EMP_HIREDATE , COUNT(EMP_HIREDATE) FROM employee AS T1 JOIN professor AS T2 ON T1.emp_num = T2.emp_num WHERE T2.prof_office = 'DRE 102'  ORDER BY COUNT(EMP_HIREDATE) DESC BIN EMP_HIREDATE BY MONTH"
+        },
+        "chart": "Bar",
+        "hardness": "Extra Hard",
+        "db_id": "college_1",
+        "vis_obj": {
+            "chart": "bar",
+            "x_name": "EMP_HIREDATE",
+            "y_name": "COUNT(EMP_HIREDATE)",
+            "x_data": [
+                [
+                    "May",
+                    "Aug",
+                    "June",
+                    "July"
+                ]
+            ],
+            "y_data": [
+                [
+                    1,
+                    1,
+                    0,
+                    0
+                ]
+            ],
+            "classify": [],
+            "describe": "BIN EMP_HIREDATE BY MONTH",
+            "sort": {
+                "channel": "y",
+                "order": "descending"
+            }
+        },
+        "nl_queries": [
+            "Show the number of professors who is in office DRE 102 hired in each month with a bar chart, show y-axis in desc order.",
+            "How many professors whose office is located in DRE 102 are hired in each month? Return a bar chart, and show y-axis in desc order."
+        ],
+        "irrelevant_tables": [
+            "DEPARTMENT",
+            "CLASS"
+        ],
+        "query_meta": [
+            {
+                "channel_specified": [ ],
+                "sort_by": "axis"
+            },
+            {
+                "channel_specified": [ ],
+                "sort_by": "axis"
+            }
+        ]
+    },
+    
+    "3137@y_name@DESC": {
+        "vis_query": {
+            "vis_part": "Visualize BAR",
+            "data_part": {
+                "sql_part": "SELECT ACC_Regular_Season , All_Games_Percent FROM basketball_match ORDER BY All_Games_Percent DESC",
+                "binning": ""
+            },
+            "VQL": "Visualize BAR SELECT ACC_Regular_Season , All_Games_Percent FROM basketball_match ORDER BY All_Games_Percent DESC"
+        },
+        "chart": "Bar",
+        "hardness": "Easy",
+        "db_id": "university_basketball",
+        "vis_obj": {
+            "chart": "bar",
+            "x_name": "ACC_Regular_Season",
+            "y_name": "All_Games_Percent",
+            "x_data": [
+                [
+                    "14-2",
+                    "13-3",
+                    "10-6",
+                    "9-7"
+                ]
+            ],
+            "y_data": [
+                [
+                    0.946,
+                    0.8240000000000001,
+                    0.706,
+                    0.6
+                ]
+            ],
+            "classify": [],
+            "describe": "",
+            "sort": {
+                "channel": "y",
+                "order": "descending"
+            }
+        },
+        "nl_queries": [
+            "Give me the comparison about All_Games_Percent over the ACC_Regular_Season by a bar chart, and I want to order All_Games_Percent in descending order.",
+            "Create a bar chart showing all_games_percent across acc regular season, sort in descending by the Y.",
+            "A bar chart shows the distribution of ACC_Regular_Season and All_Games_Percent , and rank by the Y-axis in descending.",
+            "Find ACC_Regular_Season and All_Games_Percent , and visualize them by a bar chart, rank by the Y-axis in descending.",
+            "Show me about the distribution of ACC_Regular_Season and All_Games_Percent in a bar chart, and list Y-axis from high to low order."
+        ],
+        "irrelevant_tables": [
+            "university"
+        ],
+        "query_meta": [
+            {
+                "channel_specified": [],
+                "sort_by": "field"
+            },
+            {
+                "channel_specified": [],
+                "sort_by": "axis"
+            },
+            {
+                "channel_specified": [],
+                "sort_by": "axis"
+            },
+            {
+                "channel_specified": [],
+                "sort_by": "axis"
+            },
+            {
+                "channel_specified": ["x","y"],
+                "sort_by": "axis"
+            }
+        ]
+    }
+}
