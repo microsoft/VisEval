@@ -8,6 +8,7 @@ from langchain.chat_models.base import BaseChatModel
 from langchain.schema import HumanMessage
 
 from viseval.agent import Agent, ChartExecutionResult
+
 from .utils import show_svg
 
 MAXIMUM_SAMPLES = 10
