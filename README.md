@@ -16,7 +16,7 @@ VisEval evaluates generated visualizations from three dimensions:
 ### Install Benchmark Toolkit
 
 ```bash
-pip install --upgrade viseval
+pip install --upgrade vis-evaluator
 # or `git clone https://github.com/microsoft/VisEval.git && cd VisEval && pip install --upgrade -e .`
 ```
 

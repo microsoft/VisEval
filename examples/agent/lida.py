@@ -8,6 +8,7 @@ from lida.datamodel import Goal
 from llmx import TextGenerator
 
 from viseval.agent import Agent, ChartExecutionResult
+
 from .utils import show_svg
 
 max_retries = 20

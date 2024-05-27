@@ -2,9 +2,9 @@ import argparse
 from pathlib import Path
 
 import dotenv
-from viseval import Dataset, Evaluator
-
 from agent import Chat2vis, CoML4VIS, Lida
+
+from viseval import Dataset, Evaluator
 
 dotenv.load_dotenv()
 
@@ -92,7 +92,7 @@ def _main():
 
     # config dataset
     dataset = Dataset(args.benchmark, args.type, args.irrelevant_tables)
-    
+
     # config agent
     agent = config_agent(
         args.agent,
@@ -111,7 +111,7 @@ def _main():
     )
     # config evaluator
     evaluator = Evaluator(webdriver_path=args.webdriver, vision_model=vision_model)
-    
+
     # evaluate agent
     config = {"library": args.library, "logs": args.logs}
     result = evaluator.evaluate(agent, dataset, config)
