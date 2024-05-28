@@ -1,3 +1,7 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT license.
+
+
 def show_svg(plt, svg_name: str):
     """Show a plot as a SVG inline."""
     from io import StringIO
