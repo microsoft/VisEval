@@ -1,3 +1,6 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT license.
+
 from .chart_check import chart_check
 from .data_check import data_check
 from .deconstruct import deconstruct

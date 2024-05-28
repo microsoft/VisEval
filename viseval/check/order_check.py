@@ -1,3 +1,7 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT license.
+
+
 def order_check(chart_info: dict, ground_truth: dict, sort_by: str):
     order = ground_truth["sort"]
     encoding = chart_info["encoding"]

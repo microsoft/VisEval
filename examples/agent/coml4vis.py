@@ -1,4 +1,5 @@
-from __future__ import annotations
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT license.
 
 import sys
 import warnings

@@ -1,3 +1,7 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT license.
+
+
 def chart_check(chart_info: dict, ground_truth: dict, stacked_bar: bool = False):
     if "chart" not in chart_info:
         return False, "Cannot recognize the chart type."
