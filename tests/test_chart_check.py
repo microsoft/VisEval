@@ -18,8 +18,7 @@ def test_chart_check_pie_4():
     with open(folder / "assets/pie_4_0.svg", "r") as f:
         svg_string = f.read()
         chart_info, msg = deconstruct(svg_string)
-        ground_truth = benchmark["4"]["vis_obj"]
-        ground_truth["chart"] = benchmark["4"]["chart"]
+        ground_truth = benchmark["4"]["chart"]
         query_meta = benchmark["4"]["query_meta"]
         result = chart_check(
             chart_info,
@@ -34,8 +33,7 @@ def test_chart_check_scatter_400():
         with open(folder / f"assets/scatter_400_{i}.svg", "r") as f:
             svg_string = f.read()
             chart_info, msg = deconstruct(svg_string)
-            ground_truth = benchmark["400"]["vis_obj"]
-            ground_truth["chart"] = benchmark["400"]["chart"]
+            ground_truth = benchmark["400"]["chart"]
             query_meta = benchmark["400"]["query_meta"]
             result = chart_check(
                 chart_info,
@@ -54,8 +52,7 @@ def test_chart_check_bar_1129():
         with open(folder / f"assets/bar_1129_{i}.svg", "r") as f:
             svg_string = f.read()
             chart_info, msg = deconstruct(svg_string)
-            ground_truth = benchmark["1129"]["vis_obj"]
-            ground_truth["chart"] = benchmark["1129"]["chart"]
+            ground_truth = benchmark["1129"]["chart"]
             query_meta = benchmark["1129"]["query_meta"]
             result = chart_check(
                 chart_info,
@@ -74,8 +71,7 @@ def test_chart_check_bar_2750():
         with open(folder / f"assets/stacked_bar_2750_{i}.svg", "r") as f:
             svg_string = f.read()
             chart_info, msg = deconstruct(svg_string)
-            ground_truth = benchmark["2750"]["vis_obj"]
-            ground_truth["chart"] = benchmark["2750"]["chart"]
+            ground_truth = benchmark["2750"]["chart"]
             query_meta = benchmark["2750"]["query_meta"]
             result = chart_check(
                 chart_info,
@@ -93,8 +89,7 @@ def test_chart_check_line_3240():
     with open(folder / f"assets/line_3240_0.svg", "r") as f:
         svg_string = f.read()
         chart_info, msg = deconstruct(svg_string)
-        ground_truth = benchmark["3240"]["vis_obj"]
-        ground_truth["chart"] = benchmark["3240"]["chart"]
+        ground_truth = benchmark["3240"]["chart"]
         query_meta = benchmark["3240"]["query_meta"]
         result = chart_check(
             chart_info,
@@ -108,8 +103,7 @@ def test_chart_check_line_2781():
     with open(folder / f"assets/grouping_line_2781_0.svg", "r") as f:
         svg_string = f.read()
         chart_info, msg = deconstruct(svg_string)
-        ground_truth = benchmark["2781"]["vis_obj"]
-        ground_truth["chart"] = benchmark["2781"]["chart"]
+        ground_truth = benchmark["2781"]["chart"]
         query_meta = benchmark["2781"]["query_meta"]
         result = chart_check(
             chart_info,
@@ -124,8 +118,7 @@ def test_chart_check_bar_1071():
     with open(folder / f"assets/bar_1071_0.svg", "r") as f:
         svg_string = f.read()
         chart_info, msg = deconstruct(svg_string)
-        ground_truth = benchmark["1071"]["vis_obj"]
-        ground_truth["chart"] = benchmark["1071"]["chart"]
+        ground_truth = benchmark["1071"]["chart"]
         query_meta = benchmark["1071"]["query_meta"]
         result = chart_check(
             chart_info,
@@ -136,8 +129,8 @@ def test_chart_check_bar_1071():
 
 
 def test_stacked():
-    result = chart_check({"chart": "grouping bar"}, {"chart": "Stacked Bar"}, True)
+    result = chart_check({"chart": "grouping bar"}, "Stacked Bar", True)
     assert result[0] is False
 
-    result = chart_check({"chart": "grouping bar"}, {"chart": "Stacked Bar"}, False)
+    result = chart_check({"chart": "grouping bar"}, "Stacked Bar", False)
     assert result[0] is True

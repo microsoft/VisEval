@@ -190,6 +190,11 @@ class Evaluator:
                 print(e)
 
         for instance in dataset.benchmark:
+            codes = []
+            instance_results = []
+            nl_queries = instance["nl_queries"]
+            tables = instance["tables"]
+
             if use_logs:
                 instanceFolder = log_folder / instance["id"]
                 path = instanceFolder / "result.json"
@@ -218,16 +223,15 @@ class Evaluator:
                     if not isExists:
                         os.makedirs(instanceFolder)
 
-            codes = []
-            instance_results = []
-            nl_queries = instance["nl_queries"]
-            tables = instance["tables"]
-
             for index in range(len(nl_queries)):
                 nl_query = nl_queries[index]
-
-                code, context = agent.generate(nl_query, tables, config)
-                codes.append(code)
+                if index < len(codes):
+                    code = codes[index]
+                    context = {}
+                    context["tables"] = tables
+                else:
+                    code, context = agent.generate(nl_query, tables, config)
+                    codes.append(code)
                 if code is None:
                     results = [
                         CheckResult(
@@ -258,7 +262,6 @@ class Evaluator:
                     if pass_legality:
                         results += self.readability_evaluate(context, nl_query)
 
-                results = [result.get_json() for result in results]
                 instance_results.append(results)
 
             evaluation_details.append(
@@ -266,6 +269,11 @@ class Evaluator:
             )
             if use_logs:
                 logging.info(f"Instance ({instance['id']}) evaluation finished.")
+                # convert CheckResult to json
+                instance_results = [
+                    [result.get_json() for result in results]
+                    for results in instance_results
+                ]
                 with open(log_folder / (instance["id"] + "/result.json"), "w") as f:
                     f.write(
                         json.dumps({"codes": codes, "evaluations": instance_results})
@@ -314,24 +322,33 @@ class Evaluator:
     def deconstruction(self, context) -> CheckResult:
         svg_string = context["svg_string"]
         library = context["library"]
-        chart_info, msg = deconstruct(svg_string, library)
-        if chart_info is None:
+        if library == "seaborn":
+            library = "matplotlib"
+        try:
+            chart_info, msg = deconstruct(svg_string, library)
+            if chart_info is None:
+                return CheckResult(
+                    answer=False,
+                    aspect="deconstruction",
+                    rationale=msg,
+                )
+            context.update(chart_info)
+            return CheckResult(
+                answer=True,
+                aspect="deconstruction",
+                rationale="Deconstructed the chart successfully.",
+            )
+        except:
             return CheckResult(
                 answer=False,
                 aspect="deconstruction",
-                rationale=msg,
+                rationale="Cannot parse the visualization.",
             )
-        context.update(chart_info)
-        return CheckResult(
-            answer=True,
-            aspect="deconstruction",
-            rationale="Deconstructed the chart successfully.",
-        )
 
     def chart_type_check(self, context, ground_truth) -> CheckResult:
         answer, rationale = chart_check(
             context,
-            ground_truth["vis_obj"],
+            ground_truth["chart"],
             (
                 ground_truth["meta_info"]["stacked_bar"]
                 if "stacked_bar" in ground_truth["meta_info"]

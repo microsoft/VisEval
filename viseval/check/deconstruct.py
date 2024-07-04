@@ -1292,6 +1292,9 @@ def analysis_mark(nodes, spec):
                                 # cannot understand the chart
                                 spec["data"] = []
                                 return
+                            except IndexError:
+                                spec["data"] = []
+                                return
                         elif (
                             encoding[channel]["type"] == "quantitative"
                             or encoding[channel]["type"] == "temporal"
@@ -1472,7 +1475,6 @@ def deconstruct(svg, source="matplotlib"):
         or len(spec["children"]) == 0
         or "children" not in spec["children"][0]
     ):
-        subplots = []
         return None, "Empty figure"
 
     # Ignore continuous color legend
@@ -1486,8 +1488,12 @@ def deconstruct(svg, source="matplotlib"):
             and child["children"][0]["tag"] != "image"
         )
     ]
-    if len(subplots) != 1:
+
+    if len(subplots) == 0:
+        return None, "Empty figure"
+    elif len(subplots) > 1:
         return None, "Dual axes"
+
     subplot = subplots[0]
 
     # find legend

@@ -283,7 +283,7 @@ def compare_data(data_ground_truth, chart_info):
 
 def data_check(chart_info: dict, data: dict, channel_specified: list):
     if ("data" not in chart_info) or (len(chart_info["data"]) == 0):
-        return False, "The data on the charts cannot be understood.", None
+        return False, "The data on the charts cannot be understood."
 
     data_ground_truth = convert_ground_truth_data(data)
     # filter zero data
