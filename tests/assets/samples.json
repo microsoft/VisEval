@@ -1051,5 +1051,70 @@
                 "sort_by": "axis"
             }
         ]
+    },
+    "465@y_name@ASC": {
+        "vis_query": {
+            "vis_part": "Visualize BAR",
+            "data_part": {
+                "sql_part": "SELECT Openning_year , COUNT(Openning_year) FROM cinema GROUP BY Openning_year ORDER BY COUNT(Openning_year) ASC",
+                "binning": ""
+            },
+            "VQL": "Visualize BAR SELECT Openning_year , COUNT(Openning_year) FROM cinema GROUP BY Openning_year ORDER BY COUNT(Openning_year) ASC"
+        },
+        "chart": "Bar",
+        "hardness": "Medium",
+        "db_id": "cinema",
+        "vis_obj": {
+            "chart": "bar",
+            "x_name": "Openning_year",
+            "y_name": "COUNT(Openning_year)",
+            "x_data": [
+                [
+                    "2009",
+                    "2012",
+                    "2013",
+                    "2015",
+                    "2010",
+                    "2011"
+                ]
+            ],
+            "y_data": [
+                [
+                    1,
+                    1,
+                    1,
+                    1,
+                    3,
+                    3
+                ]
+            ],
+            "classify": [],
+            "describe": "GROUP BY Openning_year",
+            "sort": {
+                "channel": "y",
+                "order": "ascending"
+            }
+        },
+        "nl_queries": [
+            "Tell me how many cinemas open for each year in a bar chart, and sort Y in ascending order please.",
+            "Bar chart of how many openning year from each openning year, list from low to high by the y axis please."
+        ],
+        "irrelevant_tables": [
+            "schedule",
+            "film"
+        ],
+        "query_meta": [
+            {
+                "channel_specified": [],
+                "sort_by": "axis"
+            },
+            {
+                "channel_specified": [
+                    "x",
+                    "y"
+                ],
+                "sort_by": "axis"
+            }
+        ]
     }
 }

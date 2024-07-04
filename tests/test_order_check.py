@@ -169,3 +169,19 @@ def test_order_check_bar_550():
             chart_info, ground_truth, query_meta[0]["sort_by"]
         )
         assert answer is True
+
+
+def test_order_check_bar_465():
+    with open(folder / "assets/bar_465.svg", "r") as f:
+        svg_string = f.read()
+        chart_info, msg = deconstruct(svg_string)
+        ground_truth = benchmark["465@y_name@ASC"]["vis_obj"]
+        query_meta = benchmark["465@y_name@ASC"]["query_meta"]
+        answer, rationale = data_check(
+            chart_info, ground_truth, query_meta[0]["channel_specified"]
+        )
+
+        answer, rationale = order_check(
+            chart_info, ground_truth, query_meta[0]["sort_by"]
+        )
+        assert answer is False

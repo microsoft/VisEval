@@ -18,7 +18,7 @@ def read_table(name, url, format):
     variable_description = {}
     exec(code)
     exec(
-        f"variable_description['{name}_dataset'] = describe_variable({name}_dataset, dataframe_format='{format}', maximum_list_items=10)"
+        f"variable_description['{name}_dataset'] = describe_variable({name}_dataset, dataframe_format='{format}', pandas_description_config=dict(max_rows=10))"
     )
     return code, variable_description
 

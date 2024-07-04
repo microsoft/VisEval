@@ -59,17 +59,38 @@ def order_check(chart_info: dict, ground_truth: dict, sort_by: str):
         else:
             # sort by other channel
             values_other = []
-            for index in range(len(other_channel_scale["domain"])):
-                values_other.append(
-                    tuple(
-                        [
-                            other_channel_scale["domain"][index],
-                            other_channel_scale["range"][index],
-                        ]
+            if (
+                "type" not in other_channel_scale
+                or other_channel_scale["type"] == "ordinal"
+            ):
+                for index in range(len(other_channel_scale["domain"])):
+                    values_other.append(
+                        tuple(
+                            [
+                                other_channel_scale["domain"][index],
+                                other_channel_scale["range"][index],
+                            ]
+                        )
                     )
+                values_other.sort(key=lambda x: x[1])
+                values_other = [item[0] for item in values_other]
+            else:
+                values_other = list(
+                    set([datum["field_" + other_channel] for datum in data])
                 )
-            values_other.sort(key=lambda x: x[1])
-            values_other = [item[0] for item in values_other]
+                values_other.sort(
+                    reverse=True
+                    if (
+                        other_channel_scale["domain"][1]
+                        - other_channel_scale["domain"][0]
+                    )
+                    / (
+                        other_channel_scale["range"][1]
+                        - other_channel_scale["range"][0]
+                    )
+                    < 0
+                    else False
+                )
 
             # cumulative
             values_order = []
