@@ -121,3 +121,16 @@ Any use of third-party trademarks or logos are subject to those third-party's po
 
 This project has adopted the [Microsoft Privacy Statement](https://go.microsoft.com/fwlink/?LinkId=521839.).
 
+## Citation
+
+If you find that VisEval helps your research, please consider citing it:
+```
+@misc{chen2024viseval,
+      title={VisEval: A Benchmark for Data Visualization in the Era of Large Language Models}, 
+      author={Nan Chen and Yuge Zhang and Jiahang Xu and Kan Ren and Yuqing Yang},
+      year={2024},
+      eprint={2407.00981},
+      archivePrefix={arXiv},
+      primaryClass={cs.HC},
+}
+```
