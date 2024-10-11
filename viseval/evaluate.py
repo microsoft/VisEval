@@ -295,26 +295,21 @@ class Evaluator:
             rationale="Code executed successfully.",
         )
 
-    def surface_form_check(self, code) -> CheckResult:
-        if "plt.show()" not in code:
-            return CheckResult(
-                answer=False,
-                aspect="surface-form check",
-                rationale="Did not plot visualization.",
-            )
-        else:
-            return CheckResult(
-                answer=True,
-                aspect="surface-form check",
-                rationale="Plotted visualization.",
-            )
+    def surface_form_check(self, context) -> CheckResult:
+        svg_string = context["svg_string"]
+        answer, rationale = surface_form_check(svg_string)
+        return CheckResult(
+            answer=answer,
+            aspect="surface-form check",
+            rationale=rationale,
+        )
 
     def validity_check(self, code, context, agent, log_name=None) -> list[CheckResult]:
         results = []
         result = self.execute(code, context, agent, log_name)
         results.append(result)
         if result.answer:
-            result = self.surface_form_check(code)
+            result = self.surface_form_check(context)
             results.append(result)
 
         return results
