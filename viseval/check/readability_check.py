@@ -64,7 +64,9 @@ def readability_check(context: dict, query: str, vision_model: BaseChatModel):
                     },
                     {
                         "type": "image_url",
-                        "image_url": base64,
+                        "image_url": {
+                            "url": base64,
+                        },
                     },
                     {
                         "type": "text",
