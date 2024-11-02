@@ -3,12 +3,13 @@
 
 from __future__ import annotations
 
-import json
 import sys
 import warnings
 
 from langchain.chat_models.base import BaseChatModel
 from langchain.schema import HumanMessage, SystemMessage
+
+from viseval.check import Eval
 
 INSTRUCTION = """Your task is to evaluate the readability of the visualization on a scale of 1 to 5, where 1 indicates very difficult to read and 5 indicates very easy to read. You will be given a visualization requirement and the corresponding visualization created based on that requirement. Additionally, reviews from others regarding this visualization will be provided for your reference. Please think carefully and provide your reasoning and score.
 ```
@@ -64,7 +65,9 @@ def readability_check(context: dict, query: str, vision_model: BaseChatModel):
                     },
                     {
                         "type": "image_url",
-                        "image_url": base64,
+                        "image_url": {
+                            "url": base64,
+                        },
                     },
                     {
                         "type": "text",
@@ -74,17 +77,8 @@ def readability_check(context: dict, query: str, vision_model: BaseChatModel):
             )
         )
 
-        response = vision_model.invoke(messages)
-
-        json_string = (
-            response.content.replace("```json\n", "").replace("```", "").strip()
-        )
-        try:
-            result = json.loads(json_string)
-        except Exception:
-            result = eval(json_string)
-
-        return result["Score"], result["Rationale"]
+        result = vision_model.with_structured_output(Eval).invoke(messages)
+        return result.Score, result.Rationale
     except Exception:
         warnings.warn(str(sys.exc_info()))
     return None, "Exception occurred."
