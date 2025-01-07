@@ -12,6 +12,7 @@ dependencies = [
     "CairoSVG",
     "selenium",
     "llmx",
+    "pydantic",
 ]
 readme = "README.md"
 
