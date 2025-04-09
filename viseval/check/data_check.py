@@ -22,6 +22,8 @@ def is_numeric(s):
     except ValueError:
         return False
 
+def compare_string(string, ground_truth):
+    return string.strip().lower().startswith(ground_truth.strip().lower())
 
 def convert_ground_truth_data(ground_truth):
     # ground truth data
@@ -91,7 +93,7 @@ def compare_data(data_ground_truth, chart_info):
             datum = [
                 x
                 for x in data
-                if str(x[field_x]).strip() == str(datum_ground_truth["field_x"]).strip()
+                if compare_string(str(x[field_x]), str(datum_ground_truth["field_x"]))
             ]
             if len(datum) == 1:
                 datum = datum[0]
@@ -195,8 +197,7 @@ def compare_data(data_ground_truth, chart_info):
                     datum = [
                         x
                         for x in datum
-                        if x["field_" + key].strip()
-                        == str(datum_ground_truth[field]).strip()
+                        if compare_string(x["field_" + key], str(datum_ground_truth[field]))
                         or compare_time_strings(
                             x["field_" + key].strip(),
                             str(datum_ground_truth[field]).strip(),

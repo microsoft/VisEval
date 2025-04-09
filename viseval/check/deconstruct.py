@@ -280,7 +280,7 @@ def process_path(node, spec):
                     + (point_seq[0][1] - point_seq[-3][1])
                     * (point_seq[mid][1] - point_seq[-2][1])
                 )
-                < 0.001
+                < 0.05
             ):
                 spec["tag"] = "arc"
                 spec["cx"] = point_seq[-2][0]

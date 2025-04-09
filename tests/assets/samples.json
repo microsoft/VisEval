@@ -1116,5 +1116,60 @@
                 "sort_by": "axis"
             }
         ]
+    },
+    "3264": {
+        "vis_query": {
+            "vis_part": "Visualize PIE",
+            "data_part": {
+                "sql_part": "SELECT Result , COUNT(Result) FROM acceptance GROUP BY Result",
+                "binning": ""
+            },
+            "VQL": "Visualize PIE SELECT Result , COUNT(Result) FROM acceptance GROUP BY Result"
+        },
+        "chart": "Pie",
+        "hardness": "Easy",
+        "db_id": "workshop_paper",
+        "vis_obj": {
+            "chart": "pie",
+            "x_name": "Result",
+            "y_name": "COUNT(Result)",
+            "x_data": [
+                [
+                    "Accepted",
+                    "Rejected"
+                ]
+            ],
+            "y_data": [
+                [
+                    2,
+                    4
+                ]
+            ],
+            "classify": [],
+            "describe": "GROUP BY Result",
+            "sort": null
+        },
+        "nl_queries": [
+            "Compute the proportion of acceptance result, and return a pie chart.",
+            "Draw a pie chart to show the proportion of acceptance result."
+        ],
+        "irrelevant_tables": [
+            "submission",
+            "workshop"
+        ],
+        "query_meta": [
+            {
+                "channel_specified": [
+                    "x",
+                    "y"
+                ]
+            },
+            {
+                "channel_specified": [
+                    "x",
+                    "y"
+                ]
+            }
+        ]
     }
 }

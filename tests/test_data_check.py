@@ -14,6 +14,17 @@ with open(folder / "assets/samples.json") as f:
     benchmark = json.load(f)
 
 
+def test_data_check_pie_5():
+    with open(folder / "assets/pie_5.svg", "r") as f:
+        svg_string = f.read()
+        chart_info, msg = deconstruct(svg_string)
+        ground_truth = benchmark["3264"]["vis_obj"]
+        query_meta = benchmark["3264"]["query_meta"]
+        result = data_check(
+            chart_info, ground_truth, query_meta[0]["channel_specified"]
+        )
+        assert result[0] is True
+        
 def test_data_check_pie_4():
     with open(folder / "assets/pie_4_0.svg", "r") as f:
         svg_string = f.read()
