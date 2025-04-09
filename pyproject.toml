@@ -1,6 +1,6 @@
 [project]
 name = "vis-evaluator"
-version = "0.0.2"
+version = "0.0.3"
 requires-python = ">=3.10"
 dependencies = [
     "langchain",
@@ -14,6 +14,7 @@ dependencies = [
     "llmx",
 ]
 readme = "README.md"
+license = {text = "MIT"}
 
 [tool.setuptools.packages.find]
 include = ["viseval*"]
