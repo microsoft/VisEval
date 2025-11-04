@@ -16,9 +16,15 @@ from .utils import show_svg
 def read_table(name, url, format):
     code = f"{name}_dataset = pd.read_csv('{url}')"
     variable_description = {}
-    exec(code)
+    local_env = {
+        "pd": pd,
+        "describe_variable": describe_variable,
+        "variable_description": variable_description,
+    }
+    exec(code, local_env)
     exec(
-        f"variable_description['{name}_dataset'] = describe_variable({name}_dataset, dataframe_format='{format}', pandas_description_config=dict(max_rows=10))"
+        f"variable_description['{name}_dataset'] = describe_variable({name}_dataset, dataframe_format='{format}', pandas_description_config=dict(max_rows=10))",
+        local_env,
     )
     return code, variable_description
 
