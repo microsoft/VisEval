@@ -5,7 +5,6 @@ import argparse
 from pathlib import Path
 
 import dotenv
-from agent import Chat2vis, CoML4VIS, Lida
 
 from viseval import Dataset, Evaluator
 
@@ -55,10 +54,16 @@ def configure_llm(model: str, agent: str):
 def config_agent(agent: str, model: str, config: dict):
     llm = configure_llm(model, agent)
     if agent == "coml4vis":
+        from agent import CoML4VIS
+
         return CoML4VIS(llm, config)
     elif agent == "chat2vis":
+        from agent import Chat2vis
+
         return Chat2vis(llm)
     elif agent == "lida":
+        from agent import Lida
+
         return Lida(llm)
     else:
         raise ValueError(f"Unknown agent {agent}")
