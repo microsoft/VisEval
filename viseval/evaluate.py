@@ -395,7 +395,6 @@ class Evaluator:
             results.append(chart_type_check_result)
             results.append(data_check_result)
             if data_check_result.answer and ground_truth["vis_obj"]["sort"] is not None:
-                self.order_check(context, ground_truth)
                 results.append(self.order_check(context, ground_truth))
 
         return results

@@ -5,7 +5,6 @@
 def order_check(chart_info: dict, ground_truth: dict, sort_by: str):
     order = ground_truth["sort"]
     encoding = chart_info["encoding"]
-    data = chart_info["data"]
     channel_map = chart_info["channel_map"]
 
     if order is not None:
@@ -13,12 +12,25 @@ def order_check(chart_info: dict, ground_truth: dict, sort_by: str):
         if sort_by == "axis":
             order_channel = order["channel"]
         else:
-            order_channel = channel_map[order["channel"]]
+            source_channel = order["channel"]
+            if source_channel not in channel_map:
+                return False, f"Missing {source_channel} channel mapping."
+            order_channel = channel_map[source_channel]
 
         other_channel = "y" if order_channel == "x" else "x"
 
+        for channel in (order_channel, other_channel):
+            if channel not in encoding:
+                return False, f"Missing {channel} encoding."
+            if "scale" not in encoding[channel]:
+                return False, f"Missing scale for {channel} encoding."
+
+        if order_channel not in channel_map:
+            return False, f"Missing {order_channel} channel mapping."
+
         order_channel_scale = encoding[order_channel]["scale"]
         other_channel_scale = encoding[other_channel]["scale"]
+        data = chart_info["data"]
 
         # origin channel
         if (
