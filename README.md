@@ -20,6 +20,17 @@ pip install --upgrade vis-evaluator
 # or `git clone https://github.com/microsoft/VisEval.git && cd VisEval && pip install --upgrade -e .`
 ```
 
+To run the generation agents in `examples/agent`, install their optional
+dependencies as well:
+
+```bash
+pip install --upgrade "vis-evaluator[agents]"
+# or, from a clone: `pip install --upgrade -e ".[agents]"`
+```
+
+The `mlcopilot` distribution provides the `coml` Python package used by
+`CoML4VIS`.
+
 ### Download Benchmark Dataset
 To access the dataset, please follow these steps:
 

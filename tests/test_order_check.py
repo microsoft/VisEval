@@ -185,3 +185,38 @@ def test_order_check_bar_465():
             chart_info, ground_truth, query_meta[0]["sort_by"]
         )
         assert answer is False
+
+
+@pytest.mark.parametrize(
+    ("chart_info", "expected_rationale"),
+    [
+        (
+            {
+                "encoding": {"y": {"scale": {}}},
+                "channel_map": {"x": "x", "y": "y"},
+            },
+            "Missing x encoding.",
+        ),
+        (
+            {
+                "encoding": {"x": {}, "y": {"scale": {}}},
+                "channel_map": {"x": "x", "y": "y"},
+            },
+            "Missing scale for x encoding.",
+        ),
+        (
+            {
+                "encoding": {"x": {"scale": {}}, "y": {"scale": {}}},
+                "channel_map": {"y": "y"},
+            },
+            "Missing x channel mapping.",
+        ),
+    ],
+)
+def test_order_check_rejects_incomplete_chart_info(chart_info, expected_rationale):
+    ground_truth = {"sort": {"channel": "x", "order": "descending"}}
+
+    answer, rationale = order_check(chart_info, ground_truth, "axis")
+
+    assert answer is False
+    assert rationale == expected_rationale

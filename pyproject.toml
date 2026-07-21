@@ -3,7 +3,7 @@ name = "vis-evaluator"
 version = "0.0.4"
 requires-python = ">=3.10"
 dependencies = [
-    "langchain",
+    "langchain<1",
     "python-dotenv",
     "numpy",
     "pandas",
@@ -25,6 +25,13 @@ Issues = "https://github.com/microsoft/VisEval/issues"
 Source = "https://github.com/microsoft/VisEval"
 
 [project.optional-dependencies]
+agents = [
+    "mlcopilot",
+    "lida",
+    "langchain-community<0.4",
+    "langchain-google-genai<3",
+    "langchain-openai<1",
+]
 dev = [
     "pytest",
     "flake8",
@@ -34,6 +41,9 @@ dev = [
     "hatch",
     "mlcopilot",
     "lida",
+    "langchain-community<0.4",
+    "langchain-google-genai<3",
+    "langchain-openai<1",
 ]
 
 

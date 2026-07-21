@@ -14,12 +14,15 @@ from .utils import show_svg
 
 
 def read_table(name, url, format):
-    code = f"{name}_dataset = pd.read_csv('{url}')"
-    variable_description = {}
-    exec(code)
-    exec(
-        f"variable_description['{name}_dataset'] = describe_variable({name}_dataset, dataframe_format='{format}', pandas_description_config=dict(max_rows=10))"
-    )
+    code = f"{name}_dataset = pd.read_csv({url!r})"
+    dataset = pd.read_csv(url)
+    variable_description = {
+        f"{name}_dataset": describe_variable(
+            dataset,
+            dataframe_format=format,
+            pandas_description_config=dict(max_rows=10),
+        )
+    }
     return code, variable_description
 
 
